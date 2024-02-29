@@ -2,25 +2,25 @@
 
 import Link from "next/link" // 어디서 온 애임?
 import { usePathname } from "next/navigation"
+import styles from "../styles/navigation.module.css"
 
 export default function Navigation () {
   const path = usePathname();
-  console.log(path)
 
     return(
-        <nav>
+        <nav className={styles.nav}>
             <ul>
                 <li>
                     <Link href="/">
                         Home
                     </Link>
-                    {path === '/' ? "v" : ""}
+                    {path === '/' ? " 🔥" : ""}
                 </li>
                 <li>
                     <Link href="/about-us">
                     About Us
                     </Link>
-                    {path === '/about-us' ? "v" : ""}
+                    {path === '/about-us' ? " 🔥" : ""}
                 </li>
             </ul>
         </nav>
